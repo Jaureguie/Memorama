@@ -1,0 +1,269 @@
+        :root{
+                --w: calc(50vw/4);
+                --h: calc(50vw/4);
+                --ws: calc();
+        }
+        *{
+            transition: all 0.5s;
+        }
+
+        body{
+            background-color: #effcf5;
+            padding: 0px;
+            margin: 0px;
+            -webkit-perspective: 1000;
+            min-height: 90vh;  
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            font-family: 'Raleway';
+        }
+        h1{
+            padding-top: 10px;
+        }
+        div{
+            display: inline-block;
+        }
+        .area-tarjeta, .tarjeta, .cara{
+            width: var(--w);
+            min-width: 40px;
+            height: var(--h);
+
+        }
+        img{
+            width: var(--w);
+            min-width: 40px;
+            height: var(--h);       
+        } 
+        .tarjeta{
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .cara{
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+            cursor: pointer;
+        }
+        .trasera{
+            background-color: aqua;
+            transform: rotateY(180deg);
+        }
+        .superior{
+            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        }
+        .jugar{
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 30px;
+            margin-bottom: 20px;    
+            border: none;
+            color: white;
+            width: 200px;
+            background-color: #2ED236;
+            font-size: larger;
+        }
+
+        .overlay{
+            background: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            transition: .3s ease all ;
+            
+        }
+        .overlay.active{
+            visibility: visible;
+        }
+        .popup{
+            background: #f5f5f5;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1); 
+            border-radius: 5px;
+            padding: 20px;
+            width: 600px;
+            transition: 0.3 ease all;
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        .popup.active{
+            opacity: 1;
+            transform: scale(1);
+        }
+        .popup .btn-cerrar-popup{
+            font-size: 30px;
+            line-height: 16px;
+            display: block;
+            color: #bbb;
+            text-align: right;
+            transition: .3s ease all;
+        }
+        .popup .btn-cerrar-popup:hover{
+            color:black;
+        }
+        .popup h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            opacity: 0; 
+        }
+        .popup.active h3{
+            animation: entradatitulo 1.2s ease 0.3s forwards;
+        }
+        .popup img{
+            opacity: 0;
+        }
+        .popup.active img {
+            animation: entradaimagen 1s ease 0.5s forwards;
+        }
+        @keyframes entradatitulo {
+            from{
+                transform: translateY(-25px);
+                opacity: 0;
+            }
+            to{
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+        @keyframes entradaimagen {
+            from{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup form .contenedor-inputs input{
+            width: 100%;
+            margin-bottom: 20px;
+            height: 40px;
+            text-align: center; 
+            border: 1px solid #BBB; 
+        }
+        .popup form .btn-submit{
+            padding: 0 20px;
+            height: 40px;
+            border: none;
+            color: white;
+            background: #5e7de3;
+            border-radius: 5px;
+            line-height: 40px;
+            cursor: pointer;
+            transition: .3s ease all;
+        }
+        .popup form .btn-submit:hover{
+            background: rgba(94, 125, 227, 0.8);
+        }
+
+        footer{
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);  
+            color:black;         
+            padding: 10px;
+            width: 100%;
+            align-items: center;
+        }
+        
+        .contenedor{
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            padding-left: 100px;
+            padding-right: 100px;
+            text-align: left;
+            font-size: 18px;
+        }
+        .social-media{
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+        
+        }
+        
+        .social-media-icon{
+            display:inline-block;
+            margin-left: 5px;
+            margin-right: 5px;
+            width: 60px;
+            height:60px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            text-align:center;
+            color: #fff;
+        }
+        .social-media-icon i{
+            font-size: 30px;
+            line-height: 60px;
+        } 
+        
+ 
+        .line{
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 2px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+  
+        
+       @media screen and (max-width: 800px) {
+        
+        .area-tarjeta, .tarjeta, .cara{
+            width: 20vw;
+            min-width: 40px;
+            height: 20vw;
+
+        }
+        img{
+            width: 20vw;
+            min-width: 40px;
+            height: 20vw;        
+        } 
+        .jugar{
+            width: 150px;
+        }
+        .contenedor
+        {
+            justify-content: center;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+        }
+    
+        .social-media{
+            width: 80%;
+            justify-content:space-evenly;
+        }
+        .social-media i{
+            margin-left: 0;
+            width: 60px;
+            height:60px;
+        }
+        .contact-me{
+            text-align: center;
+            width: 80%;
+            margin-bottom: 40px;
+        }
+        .line{
+            margin-left: auto; 
+            margin-right: auto;
+            width: 70%;
+            margin-top: 10px;
+          }  
+       }
+        
