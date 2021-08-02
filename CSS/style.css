@@ -209,7 +209,11 @@
             font-size: 30px;
             line-height: 60px;
         } 
-        
+         .social-media-icon img{
+            width: 35px;
+            height: 40px;
+            margin-top: 10px;
+          } 
  
         .line{
             width: 90%;
@@ -254,6 +258,11 @@
             width: 60px;
             height:60px;
         }
+        .social-media-icon img{
+            width: 35px;
+            height: 40px;
+            margin-top: 10px;
+         } 
         .contact-me{
             text-align: center;
             width: 80%;
